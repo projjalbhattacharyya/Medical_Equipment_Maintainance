@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventilator Machine Failure Prediction</title>
+    <link rel="stylesheet" href="static/css/ventilater.css">
+</head>
+<body>
+    <header>
+        <div id="website-name"><span class="large-letter">H</span>ospital</div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/mri">MRI</a></li>
+                <li><a href="/ventilator">Ventilator</a></li>
+                <li><a href="/bloodTest">Blood</a></li>
+                <li><a href="/ctScan">CT Scan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Ventilator Data Input</h1>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="last_maintenance">Last Maintenance Ordinal:</label>
+            <input type="number" step="any" id="last_maintenance" name="Last Maintenance Ordinal" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="usage_hours">Usage Hours:</label>
+            <input type="number" step="any" id="usage_hours" name="Usage Hours" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" step="any" id="temperature" name="Temperature (°C)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" step="any" id="humidity" name="Humidity (%)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="oxygen_rate">Oxygen Delivery Rate (L/min):</label>
+            <input type="number" step="any" id="oxygen_rate" name="Oxygen Delivery Rate (L/min)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="pressure_settings">Pressure Settings (cmH2O):</label>
+            <input type="number" step="any" id="pressure_settings" name="Pressure Settings (cmH2O)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="patient_usage">Patient Usage Count:</label>
+            <input type="number" step="any" id="patient_usage" name="Patient Usage Count" required>
+        </div>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Prediction Result -->
+    {% if result %}
+    <div class="prediction-box">
+        <h2>Prediction Result: {{ result }}</h2>
+    </div>
+    {% endif %}
+</body>
+</html>

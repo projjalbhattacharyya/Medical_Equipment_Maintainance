@@ -1,0 +1,130 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #2C3E50;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Website Name Styles */
+#website-name {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.large-letter {
+    font-size: 48px;
+    color: #3498db;
+}
+
+/* Navigation Bar Styles */
+nav {
+    margin-top: 20px;
+}
+
+#navbar {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #34495e;
+    margin-top: 20px;
+}
+
+#navbar li {
+    margin: 0 15px;
+}
+
+#navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-size: 18px;
+}
+
+#navbar li a:hover {
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+/* Main Heading Styles */
+#h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+    color: #2C3E50;
+}
+
+/* Links Container Styles */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.links-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increased width */
+    margin: 15px; /* Adjusted margin for better spacing */
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.links-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.links-container a {
+    font-size: 22px; /* Slightly larger font size for better readability */
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.links-container a:hover {
+    color: #1abc9c;
+}
+
+.links-container p {
+    font-size: 18px; /* Slightly larger font size for better readability */
+    color: #7f8c8d;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .links-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar li {
+        margin: 10px 0;
+    }
+}

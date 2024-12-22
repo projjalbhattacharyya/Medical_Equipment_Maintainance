@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT Scan Machine Failure Prediction</title>
+    <link rel="stylesheet" href="static/css/ctScan.css">
+</head>
+<body>
+    <header>
+        <div id="website-name"><span class="large-letter">H</span>ospital</div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/mri">MRI</a></li>
+                <li><a href="/ventilater">Ventilater</a></li>
+                <li><a href="/bloodTest">Blood</a></li>
+                <li><a href="/ctScan">CT Scan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>CT Scan Failure Prediction</h1>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="usage_hours">Usage Hours:</label>
+            <input type="number" step="any" id="usage_hours" name="Usage Hours" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="error_logs_count">Error Logs Count:</label>
+            <input type="number" step="any" id="error_logs_count" name="Error Logs Count" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" step="any" id="temperature" name="Temperature (°C)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" step="any" id="humidity" name="Humidity (%)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="scan_count">Scan Count:</label>
+            <input type="number" step="any" id="scan_count" name="Scan Count" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="radiation_dosage">Radiation Dosage (mGy):</label>
+            <input type="number" step="any" id="radiation_dosage" name="Radiation Dosage (mGy)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="detector_sensitivity">Detector Sensitivity (%):</label>
+            <input type="number" step="any" id="detector_sensitivity" name="Detector Sensitivity (%)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="years_since_installation">Years Since Installation:</label>
+            <input type="number" step="any" id="years_since_installation" name="Years Since Installation" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="days_since_last_maintenance">Days Since Last Maintenance:</label>
+            <input type="number" step="any" id="days_since_last_maintenance" name="Days Since Last Maintenance" required>
+        </div>
+    
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction Result -->
+    {% if result1 %}
+        <h2>Primary Prediction: {{ result1 }}</h2>
+    {% endif %}
+
+    {% if result2 %}
+        <h2>Secondary Prediction: {{ result2 }}</h2>
+    {% endif %}
+</body>
+</html>

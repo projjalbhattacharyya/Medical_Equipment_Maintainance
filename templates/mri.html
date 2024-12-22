@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI Prediction</title>
+    <link rel="stylesheet" href="static/css/mri.css">
+</head>
+<body>
+    <header>
+        <div id="website-name"><span class="large-letter">H</span>ospital</div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/mri">MRI</a></li>
+                <li><a href="/ventilater">Ventilator</a></li>
+                <li><a href="/bloodTest">Blood</a></li>
+                <li><a href="/ctScan">CT Scan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>MRI Machine Failure Prediction</h1>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="installation_date">Installation Date (Unix Timestamp):</label>
+            <input type="text" id="installation_date" name="Installation Date" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="last_maintenance_date">Last Maintenance Date (Unix Timestamp):</label>
+            <input type="text" id="last_maintenance_date" name="Last Maintenance Date" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="usage_hours">Usage Hours:</label>
+            <input type="number" step="any" id="usage_hours" name="Usage Hours" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="error_logs_count">Error Logs Count:</label>
+            <input type="number" step="any" id="error_logs_count" name="Error Logs Count" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" step="any" id="temperature" name="Temperature (\u00b0C)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" step="any" id="humidity" name="Humidity (%)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="magnetic_field_strength">Magnetic Field Strength (T):</label>
+            <input type="number" step="any" id="magnetic_field_strength" name="Magnetic Field Strength (T)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="scan_resolution">Scan Resolution (dpi):</label>
+            <input type="number" step="any" id="scan_resolution" name="Scan Resolution (dpi)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="machine_age">Machine Age (Years):</label>
+            <input type="number" step="any" id="machine_age" name="Machine Age (Years)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="time_since_last_maintenance">Time Since Last Maintenance (Days):</label>
+            <input type="number" step="any" id="time_since_last_maintenance" name="Time Since Last Maintenance (Days)" required>
+        </div>
+    
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction Box -->
+    {% if result is not none %}
+    <div class="prediction-box">
+        <h2>Prediction Result: {{ result }}</h2>
+    </div>
+    {% endif %}
+
+</body>
+</html>

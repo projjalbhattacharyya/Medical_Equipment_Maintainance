@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Test Prediction</title>
+    <link rel="stylesheet" href="static/css/bloodTest.css">
+</head>
+<body>
+    <header>
+        <div id="website-name"><span class="large-letter">H</span>ospital</div>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/mri">MRI</a></li>
+                <li><a href="/ventilater">Ventilater</a></li>
+                <li><a href="/bloodTest">Blood</a></li>
+                <li><a href="/ctScan">CT Scan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Blood Test Failure Prediction</h1>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="usage_hours">Usage Hours:</label>
+            <input type="number" step="any" id="usage_hours" name="Usage Hours" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="error_logs_count">Error Logs Count:</label>
+            <input type="number" step="any" id="error_logs_count" name="Error Logs Count" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" step="any" id="temperature" name="Temperature (°C)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" step="any" id="humidity" name="Humidity (%)" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="test_types_conducted">Test Types Conducted:</label>
+            <input type="number" step="any" id="test_types_conducted" name="Test Types Conducted" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="sample_count">Sample Count:</label>
+            <input type="number" step="any" id="sample_count" name="Sample Count" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="reagent_levels">Reagent Levels (%):</label>
+            <input type="number" step="any" id="reagent_levels" name="Reagent Levels (%)" required>
+        </div>
+    
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction Result -->
+    {% if result is not none %}
+    <div class="prediction-box">
+        <h2>Prediction Result: {{ result }}</h2>
+    </div>
+    {% endif %}
+</body>
+</html>
